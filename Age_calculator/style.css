@@ -1,0 +1,64 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    height: 100vh;
+    width: 100vw;
+    background: linear-gradient(135deg, rgba(3,37,122,1) 0%, rgba(40,128,233,1) 35%, rgba(20,74,209,1) 80%, rgba(44,64,235,1) 90%, rgba(56,9,244,1) 100%);
+}
+.container{
+    width: 400px;
+    min-height: 300px;
+
+    margin: 150px auto;
+
+}
+.text{
+    font-weight: 600;
+    letter-spacing: 7px;
+    color: white;
+    font-size: 40px;
+    margin: 30px 0;
+
+}
+.input-date{
+    padding: 20px;
+    background: rgb(137, 137, 208);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+}
+.input-date input{
+    width: 240px;
+    margin-right: 10px;
+    padding: 10px 13px;
+    cursor: pointer;
+}
+.input-date input::-webkit-calendar-picker-indicator{
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    width: auto;
+    height: auto;
+    background-position: calc(100% - 10px);
+    position: absolute;
+    background-size: 30px;
+  
+
+}
+.input-date button{
+    border-radius: 5px;
+    font-size: 13px;
+    background-color: yellow;
+    padding: 10px;
+    cursor: pointer;
+
+}
+.input-date input,button{
+    height: 40px;
+    font-size: 20px;
+}

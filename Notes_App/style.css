@@ -1,0 +1,94 @@
+@import url('https://fonts.googleapis.com/css2?family=Edu+VIC+WA+NT+Beginner:wght@400..700&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+
+}
+body{
+    height: 100vh;
+    width: 100vw;
+    background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(9,9,121,1) 35%, rgba(0,212,255,1) 100%);
+}
+.Note_container{
+    width: 500px; 
+    /* height: 100px; */ 
+    background-color: transparent;
+    position: absolute;
+    top: 90px;
+    left: 150px;
+    padding: 30px;
+
+}
+.Note_container h1{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: "Edu VIC WA NT Beginner", cursive;
+    color: white;
+    
+
+}
+.Note_container img{
+    height: 50px;
+    width: 40px;
+    margin-right: 10px;
+
+
+}
+button{
+    padding: 10px;
+    border-radius: 30px;
+    width: 300px;
+    background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(43,121,9,1) 35%, rgba(0,212,255,1) 100%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: 400;
+    font-size: 30px;
+    cursor: pointer;
+    margin: 20px auto;
+    font-family: "Edu VIC WA NT Beginner", cursive;
+
+}
+.notesdata{
+    min-height: 150px;
+    width: 100%;
+    background-color:white ;
+    padding: 20px;
+    position: relative;
+    margin: 10px 0;
+    font-size: 20px;
+    font-weight: 600;
+    font-family: "Edu VIC WA NT Beginner", cursive;
+    outline: none;
+    border: none;
+
+}
+.notesdata img{
+    position: absolute;
+    right: -15px;
+    top: -5px;
+    cursor: pointer;
+    color: white;
+    height: 30px;
+    width: 30px;
+}
+.img11{
+    /* position: absolute; */
+    right: 20px ;
+    top: 10px;
+    height: 100px;
+    width: 100px;
+    position: fixed;
+}
+.img11 img{
+    height: 100%;
+    width: 100%;
+
+}
+.img11 span{
+    color: white;
+    font-family: 'Courier New', Courier, monospace;
+}

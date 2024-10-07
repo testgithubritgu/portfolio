@@ -1,0 +1,93 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    height: 100vh;
+    width: 100vw;
+    /* background-color: aqua; */
+}
+.navbar{
+    /* width: 100%; */
+    height: 50px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 30px 20px;
+    background-color: rgb(171, 154, 188);
+    box-shadow: 0px 10px 10px rgba(11, 11, 11, 0.5);
+
+}
+
+.navbar .news{
+    width: 50px;
+    font-size: 18px;
+    cursor: pointer;
+
+}
+.navbar .search-input{
+    width: 500px;
+    /* background-color: aquamarine; */
+}
+.navbar .search-input input{
+    width: 75%;
+    height: 40px;
+    border: none;
+    outline: none;
+    border-radius: 10px;
+    padding: 10px;
+
+}
+.navbar .search-input button{
+    height: 40px;
+    width: 20%;
+    margin-left: 10px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+.news_data{
+    height: 400px;
+    width: 300px;
+    background-color: rgb(153, 142, 142);
+    padding: 9px;
+    box-shadow: 10px 10px 5px rgba(0, 0, 0, 0.6);
+
+    cursor: pointer;
+  
+
+}
+.news_data img{
+    height: 200px;
+    width: 100%;
+
+}
+.news_data h4{
+    font-size: 22px;
+    margin: 10px 0;
+
+}
+.news_data p{
+    font-size: 20px;
+    margin: 10px 0;
+
+}
+.Main{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 30px;
+    margin-top: 10px;
+}
+@media (max-width:412px){
+    .navbar{
+        padding: 28px 9px;
+    }
+    .navbar input{
+        width: 53%;
+    }
+    .navbar button{
+        width: 15%;
+    }
+}

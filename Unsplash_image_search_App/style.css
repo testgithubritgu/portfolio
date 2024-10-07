@@ -1,0 +1,127 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing: border-box;
+}
+body{
+    width: 100vw;
+    height: 100vh;
+    background-image: url("background.jpg");
+    background-size: cover;
+}
+.container{
+    width: 60%;
+    margin: 20px auto;
+
+}
+.container h3{
+    color: rgb(140, 125, 125);
+    font-size: 40px;
+    margin: 30px 0;
+    text-align: center;
+
+}
+.container input{
+    width: 100%;
+    font-size: 20px;
+    padding: 15px 40px;
+    /* border: none; */
+    outline: none;
+    border-radius: 30px;
+    background-color: rgb(229, 216, 216);
+  
+    
+}
+.overlay{
+    position: absolute;
+    bottom: 0;
+    color: white;
+    padding: 5px;
+    left: 0;
+    cursor: pointer;
+    height: 0;
+    width: 100%;
+    font-size: 0;
+    /* display: none; */
+
+    transition: height 0.3s ease;
+    background-color: rgba(0, 0, 0, 0.4);
+
+}
+.src:hover .overlay{
+    height: 100%;
+    font-size: 16px;
+    /* display: block; */
+}
+
+/* #content_images div img:hover .overlay{
+    z-index: 1000;
+    height: 100%;
+   
+} */
+
+.animation {
+    border: 2px solid red;
+ animation: shake 0.2ms  infinite ;
+}
+#content_images{
+    margin-block: 30px;
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 30px;
+    justify-content: center;
+    position: relative;
+    overflow: hidden;
+}
+#content_images .src{
+    height: 220px;
+    width: 220px;
+    border-radius: 50px;
+    position: relative;
+
+}
+/* #content_images div img:hover .overlay{
+    height: 100%;
+} */
+
+#content_images div img{
+    width: 100%;
+    height: 100%;
+    border-radius: 10px;
+    cursor: pointer;
+
+}
+@keyframes shake {
+    0%{
+        transform: translateX(0px);
+    }
+    25%{
+        transform: translateX(2px);
+    }
+    50%{
+        transform: translateX(0px);
+    }
+    75%{
+        transform: translateX(-2px);
+    }
+    100%{
+        transform: translateX(0x);
+    }
+}
+#content_images button{
+    padding: 30px;
+    text-align: center;
+    height: 40px;
+    border-radius: 9px;
+    display: flex;
+    justify-content: center;
+    align-items:center ;
+    background-color: green;
+    border: none;
+    cursor: pointer;
+}
+#imagesourse{
+    height: 200px ;
+    width: 200px;
+}

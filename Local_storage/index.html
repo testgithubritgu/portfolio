@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>local storage</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+
+  <body>
+    <div class="content">
+      <form action="">
+        <input type="text" name="text" />
+        <p id="texts" class="texts" >*required*</p>
+        <input type="number" id="num" name="number" />
+        <p id="texts1" class="texts" >*required*</p>
+        <input type="email" name="email" />
+        <p id="texts2" class="texts" >*required*</p>
+        <button type="submit">submit</button>
+      </form>
+      <button id="btn">clear</button>
+    </div>
+    <div class="formcontainer">
+      <span class="delet">&times;</span>
+      <!-- <div class="userinfo">
+        <h2>input</h2>
+        
+      </div>
+      <div class="userinfo"></div>
+
+      <div class="userinfo"></div>
+
+      <div class="userinfo"></div>
+      <div class="userinfo"></div> -->
+    </div>
+
+    <script>
+      let formcontainer = document.querySelector(".formcontainer");
+      let btn = document.getElementById("btn")
+      let form = document.querySelector("form");
+      console.log(JSON.parse(localStorage.getItem("name")));
+    
+      form.addEventListener("submit", (e) => {
+        let text = e.target.text.value;
+        let number = e.target.number.value;
+        let email = e.target.email.value;
+        let checkstatus = 0;
+
+
+        let datas = JSON.parse(localStorage.getItem("userdata")) ?? [];
+      
+
+        for(let  v of datas){
+          if(v.text == name || v.email == email){
+              checkstatus = 1;
+              break;
+          }
+        }
+        if(checkstatus == 1 ){
+          alert("already excist")
+        }else{
+          datas.push({
+          "name": text,
+          "email": email,
+          "number": number,
+        });
+          let texts = document.getElementById("texts");
+        let texts1 = document.getElementById("texts1");
+        let texts2 = document.getElementById("texts2");
+    
+        if(text == ''){
+          
+
+            texts.classList.add("t")
+      
+          
+        
+          
+        }else if(number==''){
+          texts.classList.remove("t")
+          texts1.classList.add("t")
+        
+          
+        }else if(email==''){
+          texts1.classList.remove("t")
+          texts2.classList.add("t")
+        
+         
+        }else{
+          texts.classList.remove("t")
+          texts1.classList.remove("t")
+          texts2.classList.remove("t")
+          localStorage.setItem("userdata", JSON.stringify(datas));
+          showdata();
+          e.target.reset();
+
+        }
+        checkstatus = 0;
+        }
+       
+       
+        e.preventDefault();
+      });
+    
+    
+    
+    
+    
+      function showdata(){
+        let getdata = JSON.parse(localStorage.getItem("userdata"))??[];
+        let displaydata = '';
+
+       
+        getdata.forEach((e,i)=>{
+       displaydata += ` <div class="userinfo">
+      <h2>${e.name}</h2>
+      <span onclick='delet(${i})'>&times;</span>
+      </div>`
+      
+      })
+        formcontainer.innerHTML = displaydata;
+      
+      }
+      let delet = (i)=>{
+        let getdata = JSON.parse(localStorage.getItem("userdata"))??[];
+        getdata.splice(i,1 )
+        localStorage.setItem("userdata", JSON.stringify(getdata))
+        showdata();
+      }
+
+      function samedata(){
+        let getdata = JSON.parse(localStorage.getItem("userdata"))??[];
+       
+      }
+      btn.addEventListener("click",()=>{
+        localStorage.clear("userdata");
+          showdata();
+      })
+   
+       
+      showdata();
+
+    </script>
+  </body>
+</html>

@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Image_slider</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="container" id="contaner">
+      <img class="slider" src="https://random.imagecdn.app/500/250" alt="" />
+      <img class="slider" src="https://random.imagecdn.app/500/350" alt="" />
+      <img class="slider" src="https://random.imagecdn.app/500/150" alt="" />
+      <img class="slider" src="https://random.imagecdn.app/500/550" alt="" />
+      <img class="slider" src="https://random.imagecdn.app/500/650" alt="" />
+      <img class="slider" src="https://random.imagecdn.app/500/130" alt="" />
+      <img class="slider" src="https://random.imagecdn.app/500/850" alt="" />
+      <img class="slider" src="https://random.imagecdn.app/500/230" alt="" />
+      <img class="slider" src="https://random.imagecdn.app/500/050" alt="" />
+      <img class="slider" src="https://random.imagecdn.app/500/620" alt="" />
+      <img class="slider" src="https://random.imagecdn.app/500/640" alt="" />
+    </div>
+    <div class="btn">
+      <button onclick="prev()">Prev</button>
+      <button onclick="next()">Next</button>
+    </div>
+    <script>
+      const slider = document.querySelectorAll(".slider");
+      let counter = 0;
+      const prev = () => {
+        counter--;
+      
+        sliderbar();
+      };
+      const next = ()=>{
+        counter++;
+        sliderbar();
+      }
+      slider.forEach((s, i) => {
+        s.style.left = `${i * 100}%`;
+      });
+        
+      const sliderbar = () => {
+      if(counter >= 0 && counter < 10 ){
+        slider.forEach((index)=>{
+            index.style.transform = `translateX(-${counter*100}%)`
+       })
+      }else{
+        counter = 0;
+      }
+      };
+    </script>
+  </body>
+</html>

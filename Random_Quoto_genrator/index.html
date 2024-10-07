@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>random-quoto</title>
+    <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+    <div class="container">
+       
+            <h2>
+                Quoto Of The Day
+            </h2>
+            <div class="content">
+                <h1 id="authorcontent">
+                    loading...
+                </h1>
+            </div>
+            <span id="author" class="Author">
+                author
+            </span>
+            <div class="btn">
+                <button onclick="getdata(api_url)">new Quoto</button>
+                <button onclick="tweet()"> twiter</button>
+            </div>
+        
+    </div>
+    <script>
+        const authorcontent = document.getElementById("authorcontent");
+        const author = document.getElementById("author")
+        const btn = document.getElementById("btn")
+          let api_url = "http://api.quotable.io/random"
+       async function getdata(url){
+            const response = await fetch(url);
+            const data = await response.json();
+            console.log(data)
+            authorcontent.innerHTML = data.content
+            author.innerHTML = data.author
+        }
+       function tweet(){
+        window.open("https://twitter.com/intent/tweet?text=" + authorcontent.innerHTML,"tweet open","height=300 width=600")
+       }
+        getdata(api_url)
+        
+    </script>
+</body>
+</html>
