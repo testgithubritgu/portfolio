@@ -109,7 +109,7 @@ body::-webkit-scrollbar{
     display: flex;
     justify-content: space-evenly;
     align-items: center;
-    padding: 30px 5px;
+   padding-top: 200px;
     /* background-color: rgb(109, 109, 170); */
 }
 .info_section .profile{
@@ -136,7 +136,7 @@ body::-webkit-scrollbar{
 }
 .About_me{
     width: 380px;
-    height: 380px;
+    height: fit-content;
     padding: 30px 10px;
     display: flex;
     flex-direction: column;
